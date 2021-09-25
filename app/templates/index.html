@@ -1,13 +1,15 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
 <style>
   body {
-    background: url("{{url_for('static',filename='images/wallpaper-photos-31.jpg')}}") center/cover no-repeat;
+    background: url("{{url_for('static',filename='images/background_image.jpg')}}") center/cover no-repeat;
   }
 </style>
 
-<h1 align="center">{% block header %}Posts{% endblock %}</h1>
+<h1 align="center">{% block header %}Blogs{% endblock %}</h1>
 <div id="posts">
+<div class="row">
   {% for post in posts %}
+  <div class="col-md-6 mt-2">
   <div class="card border-dark">
     <div class="card-header d-flex justify-content-between align-items-center">
       <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
@@ -31,14 +33,8 @@
       </div>
     </div>
     <div class="card-body">
-      <div class="card-text">
-
-        <h1>{{quotes.id}}</h1>
-        <h1>{{quotes.author}}</h1>
-        <hr>
-        <h2>{{quotes.quote}}</h2>
-        {{post.text}}
-      </div>
+     
+      {{post.text}}
       <br />
       <div class="collapse" id="comments-{{post.id}}">
         <div class="card">
@@ -85,12 +81,20 @@
     </div>
     <div class="card-footer text-muted">{{post.date_created.today().strftime('%Y-%m-%d %H;%M')}}</div>
   </div>
+  </div>
   <br> {% endfor %}
+</div>
 </div>
 {% block footer %}
 <div align="center">
   <a href="/create-post"><button type="button" class="btn btn-primary btn-lg">
       Create a Post
     </button></a>
+    <h1>{{quotes.id}}</h1>
+    <h1>{{quotes.author}}</h1>
+    <hr>
+    <h2>{{quotes.quote}}</h2>
 </div>
+
+
 {% endblock %} {% endblock %}
