@@ -1,4 +1,4 @@
-export  SECRET_KEY='os.urandom(32)'
-export MAIL_USERNAME='joegakumo1@gmail.com'
-export MAIL_PASSWORD='Joe32120141.'
+export  SECRET_KEY='titokip'
+export MAIL_USERNAME='langatt574@gmail.com'
+export MAIL_PASSWORD='tito@1995'
 python3.8 manage.py server
