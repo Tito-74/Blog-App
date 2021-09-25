@@ -5,7 +5,10 @@
   }
 </style>
 
-<h1 align="center">{% block header %}Blogs{% endblock %}</h1>
+<h1 style="text-align:center">{% block header %}Blogs{% endblock %}</h1>
+<a href="/create-post"><button type="button" class="btn btn-success btn-lg">
+  Create a Post
+</button></a>
 <div id="posts">
 <div class="row">
   {% for post in posts %}
@@ -86,14 +89,16 @@
 </div>
 </div>
 {% block footer %}
-<div align="center">
+<div style="text-align:center">
   <a href="/create-post"><button type="button" class="btn btn-primary btn-lg">
       Create a Post
     </button></a>
-    <h1>{{quotes.id}}</h1>
+    <p>"{{quotes.quote}} <em>({{quotes.id}})</em>"</p>
+    <h1>{{quotes.author}}</h1>
+    <!-- <h1>{{quotes.id}}</h1>
     <h1>{{quotes.author}}</h1>
     <hr>
-    <h2>{{quotes.quote}}</h2>
+    <h2>{{quotes.quote}}</h2> -->
 </div>
 
 
