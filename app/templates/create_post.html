@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 {% block title%}{% endblock %}
 {% block content %}
-<h1 style="text-align:center">Post a Blog</h1>
+<style>
+     body {
+    background: url("{{url_for('static',filename='images/post.jpg')}}") center/cover no-repeat;
+
+  }
+</style>
+<h1 style="text-align:center; margin-top:2rem">Post a Blog</h1>
 <form method="POST">
-    <textarea name="text" id="text" class="form-control" style="width:50%;margin-left:20%"></textarea>
+    <textarea name="text" id="text" class="form-control" style="width:50%;margin-left:20%" placeholder="Enter your post"></textarea>
     <div style="text-align:center">
-    <button type="submit" class="btn btn-success" >Post</button>
+        <div class="button" style="display:flex;margin-left: 40%;">
+            <button type="submit" class="btn btn-success" >Post</button>
+            <a href="{{url_for('main.home')}}"><button type="button" class="btn btn-lg btn-primary">Back</button></a>
+        </div>
+   
     </div>
 </form><br>
-<div style="text-align:center">
-    <a href="{{url_for('main.home')}}"><button type="button" class="btn btn-lg btn-primary">Back</button></a>
-</div>
+   
 {% endblock %}
 
 See video clips in action
