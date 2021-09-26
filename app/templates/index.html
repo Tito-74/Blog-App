@@ -196,7 +196,7 @@ ul.social-network li {
         <button type="submit" class="btn btn-primary">Comment</button>
       </form>
     </div>
-    <div class="card-footer text-muted">{{post.date_created.today().strftime('%Y-%m-%d %H;%M')}}</div>
+    <div class="card-footer text-muted">{{post.date_created.strftime('%Y-%m-%d %H;%M')}}</div>
   </div>
   </div>
   <br> {% endfor %}
@@ -204,9 +204,6 @@ ul.social-network li {
 </div>
 {% block footer %}
 <div style="text-align:center">
-  <!-- <a href="/create-post"><button type="button" class="btn btn-primary btn-lg">
-      Create a Post
-    </button></a> -->
     <p>"{{quotes.quote}} <em>({{quotes.id}})</em>"</p>
     <h3>~{{quotes.author}}~</h3>
     <footer class="mainfooter" role="contentinfo">
