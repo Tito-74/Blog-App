@@ -116,6 +116,10 @@ ul.social-network li {
 .social-network a {
   background-color: #F9F9F9;
 }
+.quote{
+  margin-top: 4rem;
+  margin-bottom: 0;
+}
 
 </style>
 
@@ -126,10 +130,10 @@ ul.social-network li {
 <div id="posts">
 <div class="row">
   {% for post in posts %}
-  <div class="col-md-6 mt-2">
+  <div class="col-lg-4 col-md-6 col-sm-12 mt-2">
   <div class="card border-dark">
     <div class="card-header d-flex justify-content-between align-items-center">
-      <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+      <h4>{{post.user.username}}</h4>
       <div>
         <span id="likes-count-{{post.id}}">
           {{ post.likes|length }}</span>
@@ -171,7 +175,7 @@ ul.social-network li {
                     data-bs-toggle="dropdown"></button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a>
+                      <a href="/delete-comment/{{comment.id}}">Delete</a>
                     </li>
                   </ul>
                 </div>
@@ -204,8 +208,10 @@ ul.social-network li {
 </div>
 {% block footer %}
 <div style="text-align:center">
+  <div class="quote">
     <p>"{{quotes.quote}} <em>({{quotes.id}})</em>"</p>
     <h3>~{{quotes.author}}~</h3>
+  </div>
     <footer class="mainfooter" role="contentinfo">
       <div class="footer-middle">
       <div class="container">
