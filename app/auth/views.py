@@ -42,9 +42,9 @@ def sign_up():
         elif password1 != password2:
             flash("password don\'t match!" ,category="error")
 
-        elif len(username)<7:
+        elif len(username)<3:
             flash("username is too short.", category ="error")
-        elif len(password1)<8:
+        elif len(password1)<5:
             flash("password  is too short.", category ="error")
 
         elif len(email)<10:
